@@ -88,12 +88,16 @@ export function PhotoPlaceholder({
 export function Hero() {
   return (
     <section className="relative overflow-hidden navy-panel text-white">
-      <div
-        className="pointer-events-none absolute -left-40 -top-24 h-[520px] w-[680px] rounded-full opacity-25 blur-[140px]"
-        style={{ background: "var(--brand)" }}
-      />
-      <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-6 py-16 lg:grid-cols-[1fr_1.1fr] lg:px-12 lg:py-20">
-        <div className="relative z-10">
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] lg:block" aria-hidden>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/brand/hero-team.jpg" alt="" className="h-full w-full object-cover object-[center_30%]" />
+        <div className="absolute inset-0 mix-blend-multiply" style={{ background: "#10294d", opacity: 0.4 }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #0d1f3c 0%, rgba(13,31,60,0.55) 22%, rgba(13,31,60,0) 55%)" }} />
+        <div className="absolute inset-x-0 bottom-0 h-2/5" style={{ background: "linear-gradient(to top, rgba(7,19,34,0.55), transparent)" }} />
+      </div>
+      <div className="pointer-events-none absolute -left-40 -top-24 h-[520px] w-[680px] rounded-full opacity-25 blur-[140px]" style={{ background: "var(--brand)" }} />
+      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-12">
+        <div className="max-w-[560px] py-20 lg:py-28">
           <h1 className="font-display text-[38px] font-semibold leading-[1.16] tracking-[-0.02em] sm:text-[47px]">
             Trusted gas &amp; heating
             <br />
@@ -115,11 +119,12 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <PhotoPlaceholder
-          label="PHOTO · TEAM WITH VANS"
-          spec="Crew shot graded into brand navy — see Figma hero (node 163:21)"
-          className="min-h-[280px] border-white/25 bg-white/5 text-white lg:min-h-[380px]"
-        />
+        <div className="relative -mx-6 h-64 overflow-hidden sm:h-80 lg:hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/brand/hero-team.jpg" alt="The MGAS team with their vans" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 mix-blend-multiply" style={{ background: "#10294d", opacity: 0.4 }} />
+          <div className="absolute inset-x-0 top-0 h-16" style={{ background: "linear-gradient(to bottom, #0d1f3c, transparent)" }} />
+        </div>
       </div>
     </section>
   );
