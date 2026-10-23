@@ -91,7 +91,7 @@ export function NavBar() {
         {/* book now */}
         <Link
           href="/contact"
-          className="btn-gradient group flex h-12 shrink-0 items-center gap-3 rounded-full py-2 pl-5 pr-2 text-sm font-bold shadow-btn transition hover:brightness-110"
+          className="bg-red-600 group flex h-12 shrink-0 items-center gap-3 rounded-full py-2 pl-5 pr-2 text-sm font-bold shadow-btn transition hover:brightness-110"
         >
           Book Now
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/18 transition group-hover:translate-x-0.5">
