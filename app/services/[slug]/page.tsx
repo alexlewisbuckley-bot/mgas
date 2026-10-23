@@ -62,7 +62,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </a>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              {["Gas Safe registered", "5–12 year warranties", "4.9 on Trustpilot"].map((c) => (
+              {["Gas Safe registered", "5–12 year warranties", "5.0 on Google"].map((c) => (
                 <span key={c} className="flex items-center gap-2 rounded-full border border-[#dce5ef] bg-ground px-4 py-2 text-[12.5px] font-medium text-ink">
                   <span className="h-2 w-2 rounded-full bg-ok" /> {c}
                 </span>
@@ -98,11 +98,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="rounded-3xl border border-line bg-white p-9 shadow-card">
               <Stars size={16} />
-              <h3 className="mt-4 text-[15.5px] font-bold text-ink">Fitted next day, spotless work.</h3>
+              <h3 className="mt-4 text-[15.5px] font-bold text-ink">Excellent from start to finish.</h3>
               <p className="mt-2 text-[13.5px] leading-relaxed text-body">
-                Boiler died on the Sunday — new one in by Tuesday lunch. Carpets covered, everything explained.
+                MGAS have just replaced a boiler for me. The service was excellent from start to finish. Would definitely recommend.
               </p>
-              <p className="mt-4 text-[12.5px] font-medium text-faint">James · Stockport</p>
+              <p className="mt-4 text-[12.5px] font-medium text-faint">Simon Litherland · Google review</p>
             </div>
           </div>
         </section>

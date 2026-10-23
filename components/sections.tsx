@@ -167,10 +167,10 @@ export function TrustStrip() {
         <span className="font-display text-[19px] font-semibold text-ink">Excellent</span>
         <Stars size={22} gap={5} />
         <span className="text-sm text-body">
-          4.9 out of 5 based on 312 reviews {/* TODO: live Trustpilot data */}
+          5.0 out of 5 based on 11 Google reviews
         </span>
         <span className="flex items-center gap-2 font-bold text-ink">
-          <TpStar size={18} /> Trustpilot
+          <TpStar size={18} /> Google Reviews
         </span>
         <div className="ml-auto hidden gap-10 xl:flex">
           {reviews.slice(0, 3).map((r) => (
@@ -427,15 +427,15 @@ export function ReviewsSection() {
   return (
     <section className="bg-ground py-16 lg:py-20">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
-        <SectionHeader eyebrow="Reviews · Trustpilot" title="Rated Excellent by the people we work for." />
+        <SectionHeader eyebrow="Reviews · Google" title="Rated Excellent by the people we work for." />
         <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_2fr]">
           <div className="rounded-2xl border border-line bg-white p-8 shadow-card">
             <h3 className="font-display text-[26px] font-semibold text-ink">Excellent</h3>
             <div className="mt-4"><Stars size={28} gap={6} /></div>
-            <p className="mt-4 text-sm text-body">4.9 out of 5 · based on 312 reviews</p>
-            <p className="mt-2 flex items-center gap-2 font-bold text-ink"><TpStar size={18} /> Trustpilot</p>
+            <p className="mt-4 text-sm text-body">5.0 out of 5 · based on 11 reviews</p>
+            <p className="mt-2 flex items-center gap-2 font-bold text-ink"><TpStar size={18} /> Google Reviews</p>
             <div className="my-6 h-px bg-line-soft" />
-            {[["5", 89], ["4", 7], ["3", 2], ["2", 1], ["1", 1]].map(([star, pct]) => (
+            {[["5", 100], ["4", 0], ["3", 0], ["2", 0], ["1", 0]].map(([star, pct]) => (
               <div key={star} className="mb-2.5 flex items-center gap-3 text-[12.5px] text-body">
                 <span className="w-2">{star}</span>
                 <TpStar size={11} />
@@ -446,7 +446,7 @@ export function ReviewsSection() {
               </div>
             ))}
             <a href="#" className="mt-5 inline-block text-sm font-semibold text-brand hover:underline">
-              Review us on Trustpilot
+              Review us on Google
             </a>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">

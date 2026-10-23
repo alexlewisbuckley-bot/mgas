@@ -78,30 +78,30 @@ export const services = [
 export type Service = (typeof services)[number];
 
 export const reviews = [
-  // TODO: replace with real Trustpilot content
+  // Real Google reviews (5.0, 11 reviews) — titles are excerpts from the review text.
   {
-    title: "Fitted next day, spotless work.",
-    body: "Boiler died on the Sunday — new one in by Tuesday lunch. Carpets covered, everything explained.",
-    name: "James · Stockport",
-    when: "2 weeks ago",
+    title: "Brilliant from start to finish.",
+    body: "New kitchen installed and used MGAS for all the plumbing work. Everything complete on time and very professional.",
+    name: "Ben Sherrington",
+    when: "Google review",
   },
   {
-    title: "Honest advice, fair price.",
-    body: "No upselling — straight advice on repair versus replace that ended up saving us money.",
-    name: "Priya · Sale",
-    when: "1 month ago",
+    title: "Excellent from start to finish.",
+    body: "MGAS Plumbing & Heating have just replaced a boiler for me. The service was excellent from start to finish. Would definitely recommend.",
+    name: "Simon Litherland",
+    when: "Google review",
   },
   {
-    title: "Our landlords' go-to for 3 years.",
-    body: "CP12s across fourteen properties, always on schedule — the paperwork just appears.",
-    name: "DM Lettings · Bolton",
-    when: "1 month ago",
+    title: "Trustworthy and fair-priced.",
+    body: "He knew straight away what the issue was. Supplied and fitted the part, drained the system and added inhibitor — for less than half the original quote.",
+    name: "Thomas",
+    when: "Google review",
   },
   {
-    title: "Out at 9pm for an emergency leak.",
-    body: "Found the leak under the kitchen floor and fixed it the same evening. Couldn't ask for more.",
-    name: "Claire · Wigan",
-    when: "3 weeks ago",
+    title: "The work is amazing.",
+    body: "Matt and Kyle are great guys and so polite. Can't believe the transformation of the bathroom. They explain everything really well.",
+    name: "Kerry Howlett",
+    when: "Google review",
   },
 ];
 
