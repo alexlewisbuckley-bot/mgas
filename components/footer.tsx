@@ -7,6 +7,11 @@ const company = [
   ["Reviews", "/reviews"],
   ["Areas we cover", "/areas"],
   ["Commercial clients", "/commercial"],
+  ["Emergency call-out", "/emergency"],
+  ["New boiler cost", "/new-boiler-cost"],
+  ["Our work", "/our-work"],
+  ["Advice", "/advice"],
+  ["Careers", "/careers"],
   ["FAQs", "/#faqs"],
   ["Contact", "/contact"],
 ];

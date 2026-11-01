@@ -126,6 +126,23 @@ export function NavBar() {
               View all services <IconArrow className="h-4 w-4" />
             </Link>
           </div>
+          <div className="mx-auto mt-4 flex max-w-[1440px] flex-wrap gap-x-6 gap-y-2 border-t border-white/10 px-6 pt-4 text-[13px] font-semibold text-mut lg:px-12">
+            {[
+              ["Emergency call-out", "/emergency"],
+              ["New boiler cost", "/new-boiler-cost"],
+              ["Our work", "/our-work"],
+              ["Advice", "/advice"],
+              ["Areas we cover", "/areas"],
+              ["Reviews", "/reviews"],
+              ["About", "/about"],
+              ["Careers", "/careers"],
+              ["Contact", "/contact"],
+            ].map(([label, href]) => (
+              <Link key={href} href={href} onClick={() => setOpen(false)} className="transition hover:text-white">
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </header>
