@@ -40,7 +40,7 @@ Type scale (desktop): H1 40–47/Bricolage SemiBold, ls −0.8; H2 30–34 ls �
 
 Radii: section cards 16–20; small cards 14; buttons 11–12; pills/chips fully rounded. Borders 1px `line` on every white card. Card shadow: `0 14px 30px rgba(16,42,77,0.07)`. Button shadow: `0 10px 24px rgba(29,110,208,0.35)` (blue glow on primary).
 
-Register rules (why it looks like it does): one blue accent only; navy chrome; alternating white / `ground` section bands; hairline keylines between chrome bands; every white card gets border + soft shadow; drawn 2px round-cap stroke icons (no icon fonts, no emoji); image placeholders are dashed-border blocks with shot-spec captions — keep them until real photos exist; dummy data (phone, reviews, prices `£[—]`, company numbers `00000000`) is placeholder — grep for `0161 000 0000`, `[—]`, `00000000` before launch.
+Register rules (why it looks like it does): one blue accent only; navy chrome; alternating white / `ground` section bands; hairline keylines between chrome bands; every white card gets border + soft shadow; drawn 2px round-cap stroke icons (no icon fonts, no emoji); image placeholders are dashed-border blocks with shot-spec captions — keep them until real photos exist; remaining placeholders: prices `£[—]`, company/Gas Safe numbers `00000000`, team names, accreditation logos — grep for `[—]`, `00000000`, `TODO`, `[confirm]` before launch. Real phone/email are in lib/site.ts.
 
 ## Page inventory → Figma node IDs
 
@@ -61,7 +61,7 @@ Register rules (why it looks like it does): one blue accent only; navy chrome; a
 | /emergency | PAGE · Emergency Call-Out | 204:21 |
 | /about | PAGE · About | 205:21 |
 | /areas | PAGE · Areas We Cover | 206:21 |
-| /areas/wigan (template for all towns) | PAGE · Area — Wigan | 206:216 |
+| (per-town pages dropped — not needed) | PAGE · Area — Wigan | 206:216 |
 | /reviews | PAGE · Reviews | 207:21 |
 | /new-boiler-cost | PAGE · New Boiler Cost | 208:21 |
 | /our-work | PAGE · Recent Work | 209:21 |
