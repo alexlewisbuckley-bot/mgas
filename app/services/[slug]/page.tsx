@@ -4,7 +4,7 @@ import { Chrome } from "@/components/chrome";
 import { Footer } from "@/components/footer";
 import { ContactBand } from "@/components/contact-band";
 import { PhotoPlaceholder, Tick } from "@/components/sections";
-import { services, site } from "@/lib/site";
+import { services, site, reviews } from "@/lib/site";
 import { IconArrow, Stars } from "@/components/icons";
 
 export function generateStaticParams() {
@@ -22,6 +22,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const s = services.find((x) => x.slug === slug);
   if (!s) notFound();
+  const review = reviews[s.reviewIndex] ?? reviews[0];
   return (
     <>
       <Chrome />
@@ -52,7 +53,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </a>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              {["Gas Safe registered", "5–12 year warranties", "5.0 on Google"].map((c) => (
+              {s.chips.map((c) => (
                 <span key={c} className="flex items-center gap-2 rounded-full border border-[#dce5ef] bg-ground px-4 py-2 text-[12.5px] font-medium text-ink">
                   <span className="h-2 w-2 rounded-full bg-ok" /> {c}
                 </span>
@@ -69,7 +70,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="bg-ground py-14">
           <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
             <p className="eyebrow">What’s included</p>
-            <h2 className="mt-3 font-display text-[28px] font-semibold text-ink">Everything, handled.</h2>
+            <h2 className="mt-3 font-display text-[28px] font-semibold text-ink">{s.includedTitle}</h2>
             <div className="mt-8 grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
               {s.included.map((i) => (
                 <Tick key={i}>{i}</Tick>
@@ -81,18 +82,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="mx-auto max-w-[1440px] px-6 py-14 lg:px-12">
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="navy-panel rounded-3xl p-9 text-white">
-              <h3 className="font-display text-[21px] font-semibold leading-snug">
-                Every boiler fitted comes with a 5–12 year warranty.
-              </h3>
-              <p className="mt-3 text-[13px] text-mut">Manufacturer-backed, parts &amp; labour — registered for you.</p>
+              <h3 className="font-display text-[21px] font-semibold leading-snug">{s.panel.title}</h3>
+              <p className="mt-3 text-[13px] text-mut">{s.panel.sub}</p>
             </div>
             <div className="rounded-3xl border border-line bg-white p-9 shadow-card">
               <Stars size={16} />
-              <h3 className="mt-4 text-[15.5px] font-bold text-ink">Excellent from start to finish.</h3>
-              <p className="mt-2 text-[13.5px] leading-relaxed text-body">
-                MGAS have just replaced a boiler for me. The service was excellent from start to finish. Would definitely recommend.
-              </p>
-              <p className="mt-4 text-[12.5px] font-medium text-faint">Simon Litherland · Google review</p>
+              <h3 className="mt-4 text-[15.5px] font-bold text-ink">{review.title}</h3>
+              <p className="mt-2 text-[13.5px] leading-relaxed text-body">{review.body}</p>
+              <p className="mt-4 text-[12.5px] font-medium text-faint">{review.name} · {review.when}</p>
             </div>
           </div>
         </section>

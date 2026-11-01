@@ -163,18 +163,18 @@ export function QuickTiles() {
 export function TrustStrip() {
   return (
     <section className="border-b border-line bg-white">
-      <div className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-8 gap-y-4 px-6 py-8 lg:px-12">
-        <span className="font-display text-[19px] font-semibold text-ink">Excellent</span>
-        <Stars size={22} gap={5} />
-        <span className="text-sm text-body">
-          5.0 out of 5 based on 11 Google reviews
-        </span>
-        <span className="flex items-center gap-2 font-bold text-ink">
-          <TpStar size={18} /> Google Reviews
-        </span>
-        <div className="ml-auto hidden gap-10 xl:flex">
+      <div className="mx-auto flex max-w-[1440px] items-center gap-x-10 px-6 py-8 lg:px-12">
+        <div className="flex shrink-0 flex-wrap items-center gap-x-6 gap-y-3">
+          <span className="font-display text-[19px] font-semibold text-ink">Excellent</span>
+          <Stars size={22} gap={5} />
+          <span className="text-sm text-body">5.0 out of 5 based on 11 Google reviews</span>
+          <span className="flex items-center gap-2 font-bold text-ink">
+            <TpStar size={18} /> Google Reviews
+          </span>
+        </div>
+        <div className="hidden min-w-0 flex-1 grid-cols-3 gap-8 xl:grid">
           {reviews.slice(0, 3).map((r) => (
-            <div key={r.name} className="max-w-[210px]">
+            <div key={r.name} className="min-w-0">
               <p className="text-[13.5px] font-bold text-[#22364e]">“{r.title}”</p>
               <p className="mt-1 text-xs text-faint">{r.name}</p>
             </div>
@@ -229,15 +229,17 @@ export function ServicesSection() {
 /* ---------- areas + map ---------- */
 
 const townPts: Record<string, [number, number, string]> = {
-  Preston: [340, 92, "above"],
-  Chorley: [318, 158, "left"],
-  Bolton: [438, 148, "right"],
-  Salford: [478, 272, "right"],
-  Manchester: [528, 318, "right"],
-  Leigh: [404, 296, "below"],
-  Warrington: [372, 382, "below"],
-  "St Helens": [262, 318, "left"],
-  Skelmersdale: [238, 254, "left"],
+  Preston: [330, 126, "above"],
+  Chorley: [342, 184, "right"],
+  Bolton: [420, 228, "right"],
+  Leigh: [392, 280, "right"],
+  Warrington: [380, 336, "below"],
+  "St Helens": [312, 302, "below"],
+  Rainford: [282, 286, "left"],
+  Skelmersdale: [278, 258, "left"],
+  Southport: [216, 182, "right"],
+  Formby: [214, 238, "right"],
+  Liverpool: [232, 346, "below"],
 };
 
 export function MapCard({ className = "" }: { className?: string }) {
@@ -309,17 +311,16 @@ export function AreasSection() {
           </p>
           <div className="mt-8 flex max-w-[600px] flex-wrap gap-3">
             {towns.map((t, i) => (
-              <Link
+              <span
                 key={t}
-                href="/areas"
                 className={
                   i === 0
-                    ? "rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
-                    : "rounded-full border border-[#dce5ef] bg-white px-5 py-2.5 text-sm font-medium text-ink transition hover:border-brand hover:text-brand"
+                    ? "rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white"
+                    : "rounded-full border border-[#dce5ef] bg-white px-5 py-2.5 text-sm font-medium text-ink"
                 }
               >
                 {t}
-              </Link>
+              </span>
             ))}
           </div>
           <p className="mt-8 text-[14.5px] text-body">

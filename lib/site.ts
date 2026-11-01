@@ -1,10 +1,10 @@
 // Central site data — placeholder values are flagged; grep for TODO before launch.
 export const site = {
   name: "MGAS Plumbing & Heating",
-  phone: "0161 000 0000", // TODO: real number
-  phoneHref: "tel:+441610000000", // TODO: real number
-  email: "hello@mgas-plumbing.co.uk", // TODO: real email
-  whatsappHref: "https://wa.me/441610000000", // TODO: real number
+  phone: "07880 518985",
+  phoneHref: "tel:+447880518985",
+  email: "info@mgasplumbing.co.uk",
+  whatsappHref: "https://wa.me/447880518985",
   hours: "Mon–Fri 8am–6pm · Sat 9am–1pm",
   areasBlurb: "Based in Wigan, covering North West England",
 };
@@ -22,6 +22,10 @@ export const services = [
     photo:
       "Landscape photograph of an engineer installing a boiler, with neatly finished pipework and the work area protected.",
     icon: "flame",
+    includedTitle: "What every boiler installation includes.",
+    panel: { title: "Every boiler we fit comes with a manufacturer warranty.", sub: "Registered for you on the day, with the paperwork to prove it." },
+    chips: ["Gas Safe registered", "Manufacturer warranties", "5.0 on Google"],
+    reviewIndex: 1,
   },
   {
     slug: "boiler-servicing-repairs",
@@ -34,6 +38,10 @@ export const services = [
     photo:
       "Landscape close-up of an engineer using a flue gas analyser while servicing a boiler.",
     icon: "wrench",
+    includedTitle: "What a full boiler service covers.",
+    panel: { title: "Serviced properly, with the readings to show for it.", sub: "Flue analysis and gas rate checks on every service, not just a wipe-down." },
+    chips: ["Gas Safe registered", "Service records kept", "5.0 on Google"],
+    reviewIndex: 2,
   },
   {
     slug: "commercial-boiler-servicing",
@@ -46,6 +54,10 @@ export const services = [
     photo:
       "Landscape photograph of a commercial plant room with professionally installed boilers and neatly routed pipework.",
     icon: "building",
+    includedTitle: "What we cover for commercial customers.",
+    panel: { title: "Planned maintenance that keeps your premises open.", sub: "Servicing scheduled around your hours, with records for your compliance file." },
+    chips: ["Gas Safe registered", "Commercial experience", "5.0 on Google"],
+    reviewIndex: 0,
   },
   {
     slug: "landlord-gas-safety",
@@ -58,6 +70,10 @@ export const services = [
     photo:
       "Landscape photograph of an engineer completing a gas safety inspection in a rental property, with inspection equipment visible.",
     icon: "shield",
+    includedTitle: "What a landlord gas safety check includes.",
+    panel: { title: "Your CP12, issued on the day and stored for you.", sub: "Digital records and a reminder before your next one is due." },
+    chips: ["Gas Safe registered", "CP12 issued on the day", "5.0 on Google"],
+    reviewIndex: 1,
   },
   {
     slug: "plumbing-repairs",
@@ -70,6 +86,10 @@ export const services = [
     photo:
       "Landscape photograph of an engineer repairing pipework beneath a sink, with tools arranged neatly.",
     icon: "droplet",
+    includedTitle: "What our plumbing repairs cover.",
+    panel: { title: "Fixed properly, and the work area left as we found it.", sub: "We explain the fault and the options before any work starts." },
+    chips: ["WIAPS approved", "Tidy, guaranteed work", "5.0 on Google"],
+    reviewIndex: 3,
   },
   {
     slug: "leak-detection",
@@ -82,6 +102,10 @@ export const services = [
     photo:
       "Landscape photograph of an engineer using specialist leak detection equipment to investigate a suspected hidden pipework leak.",
     icon: "leak",
+    includedTitle: "How we find the leak.",
+    panel: { title: "Find the leak before you lift a floor.", sub: "Acoustic, tracer gas and thermal imaging methods to pinpoint the source first." },
+    chips: ["Gas Safe registered", "Specialist equipment", "5.0 on Google"],
+    reviewIndex: 2,
   },
   {
     slug: "heat-pumps-air-conditioning",
@@ -94,6 +118,10 @@ export const services = [
     photo:
       "Landscape photograph of a neatly installed air source heat pump outside a home, with finished pipework visible.",
     icon: "air",
+    includedTitle: "From survey to commissioning.",
+    panel: { title: "Sized to your property, not off the shelf.", sub: "Site survey and heat-loss sizing before we recommend any system." },
+    chips: ["REFCOM certified", "Gas Safe registered", "5.0 on Google"],
+    reviewIndex: 3,
   },
   {
     slug: "power-flushing",
@@ -106,6 +134,10 @@ export const services = [
     photo:
       "Landscape photograph of an engineer connecting power-flushing equipment to a central heating system in a tidy domestic property.",
     icon: "flush",
+    includedTitle: "What a power flush involves.",
+    panel: { title: "Cold radiators are usually sludge, not the boiler.", sub: "A power flush cleans the whole system and we check performance afterwards." },
+    chips: ["Gas Safe registered", "Inhibitor added", "5.0 on Google"],
+    reviewIndex: 2,
   },
 ] as const;
 
@@ -141,13 +173,15 @@ export const reviews = [
 
 export const towns = [
   "Wigan",
-  "Leigh",
-  "Bolton",
-  "St Helens",
-  "Skelmersdale",
   "Chorley",
+  "Bolton",
+  "Leigh",
+  "St Helens",
   "Warrington",
-  "Salford",
-  "Manchester",
   "Preston",
+  "Southport",
+  "Liverpool",
+  "Skelmersdale",
+  "Formby",
+  "Rainford",
 ];
