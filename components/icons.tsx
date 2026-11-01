@@ -69,6 +69,15 @@ export function IconAir(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+export function IconFlush(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M7 5v14M11 5v14M15 5v14" />
+      <path d="M3 12h18" strokeWidth={1.6} />
+    </svg>
+  );
+}
 export function IconPhone(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...props}>
@@ -189,4 +198,5 @@ export const serviceIcons = {
   droplet: IconDroplet,
   leak: IconLeak,
   air: IconAir,
+  flush: IconFlush,
 } as const;

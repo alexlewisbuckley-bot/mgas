@@ -72,6 +72,7 @@ export function Footer() {
             <div className="mt-6 space-y-5">
               <LogoSlot name="Gas Safe Register" />
               <LogoSlot name="WIAPS" />
+              <LogoSlot name="REFCOM" />
             </div>
             <p className="mt-5 text-[10.5px] text-white/40">Official marks to be added once confirmed.</p>
           </div>

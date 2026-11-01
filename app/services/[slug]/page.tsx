@@ -17,21 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: s?.title ?? "Service" };
 }
 
-const included: Record<string, string[]> = {
-  "boiler-installations": ["Survey & heat-loss check", "Boiler supply & installation", "Removal of the old system", "System flush & inhibitor", "Warranty registered for you", "Aftercare & service reminder"],
-  "boiler-servicing-repairs": ["Full service & flue analysis", "Gas rate & safety checks", "Fault diagnosis", "Repairs & genuine parts", "Pressure & controls check", "Service record & reminder"],
-  "commercial-boiler-servicing": ["Planned maintenance schedules", "Fault finding & repairs", "Compliance documentation", "Plant room inspections", "Breakdown response", "Multi-site portfolios"],
-  "landlord-gas-safety": ["CP12 certificate issued", "Appliance & flue checks", "Tightness test at the meter", "Remedial quotes if needed", "Portfolio scheduling", "Digital records & reminders"],
-  "plumbing-repairs": ["Taps, toilets & showers", "Leaks & burst pipes", "Pipework & valves", "Tanks & cylinders", "Waste & drainage faults", "Tidy, guaranteed work"],
-  "leak-detection": ["Acoustic & tracer gas detection", "Thermal imaging survey", "Pressure testing", "Minimal-disruption access", "Same-visit repair where possible", "Report for your insurer"],
-  "heat-pumps-air-conditioning": ["Site survey & heat-loss sizing", "Heat pump installation", "Air conditioning installation", "Servicing & repairs", "Smart controls setup", "Efficiency & grant advice"],
-};
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const s = services.find((x) => x.slug === slug);
   if (!s) notFound();
-  const inc = included[s.slug] ?? [];
   return (
     <>
       <Chrome />
@@ -71,7 +61,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
           <PhotoPlaceholder
             label="PHOTO · LANDSCAPE 7:5"
-            spec="See shot spec in the Figma service page for this service"
+            spec={s.photo}
             className="min-h-[340px]"
           />
         </section>
@@ -81,7 +71,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="eyebrow">What’s included</p>
             <h2 className="mt-3 font-display text-[28px] font-semibold text-ink">Everything, handled.</h2>
             <div className="mt-8 grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-              {inc.map((i) => (
+              {s.included.map((i) => (
                 <Tick key={i}>{i}</Tick>
               ))}
             </div>
