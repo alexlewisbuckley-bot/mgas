@@ -26,14 +26,26 @@ const inputCls =
 export function CallbackForm({ defaultService }: { defaultService?: string }) {
   const router = useRouter();
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   return (
     <form
       className="rounded-3xl bg-white p-8 shadow-card-lg lg:p-9"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
         setSending(true);
-        // TODO: post to /api/enquiry (email/CRM integration)
-        setTimeout(() => router.push("/thank-you"), 600);
+        setError(null);
+        try {
+          const res = await fetch("/api/enquiry", { method: "POST", body: new FormData(e.currentTarget) });
+          const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+          if (res.ok && data.ok) {
+            router.push("/thank-you");
+            return;
+          }
+          setError(data.error ?? "Something went wrong — please try again or give us a call.");
+        } catch {
+          setError("We couldn’t send your request — check your connection or give us a call.");
+        }
+        setSending(false);
       }}
     >
       <h3 className="font-display text-xl font-semibold text-ink">Request a callback</h3>
@@ -68,6 +80,11 @@ export function CallbackForm({ defaultService }: { defaultService?: string }) {
         {sending ? "Sending…" : "Request a callback"}
         <IconArrow className="h-4 w-4 transition group-hover:translate-x-0.5" />
       </button>
+      {error && (
+        <p role="alert" className="mt-4 rounded-[10px] border border-[#f3c9a6] bg-[#fdead7] px-4 py-3 text-center text-[13px] font-medium text-[#9a5b1f]">
+          {error}
+        </p>
+      )}
       <p className="mt-4 text-center text-[11.5px] text-faint">
         We’ll only use your details to reply to this enquiry — nothing else.
       </p>
